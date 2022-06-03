@@ -1,0 +1,10 @@
+﻿{
+  "Name": "TakeABreak",
+  "Author": "Krutonium",
+  "Version": "1.0.0",
+  "Description": "Standing Still refills your stamina and health!",
+  "UniqueID": "krutonium.takeabreak",
+  "EntryDll": "TakeABreak.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}

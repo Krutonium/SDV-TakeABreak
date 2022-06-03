@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TakeABreak", "TakeABreak\TakeABreak.csproj", "{EEF03754-7253-475F-93D8-5190D02CD5BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEF03754-7253-475F-93D8-5190D02CD5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF03754-7253-475F-93D8-5190D02CD5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF03754-7253-475F-93D8-5190D02CD5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF03754-7253-475F-93D8-5190D02CD5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B212675-0381-4434-B280-7E795A72F69C}
+	EndGlobalSection
+EndGlobal
