@@ -12,6 +12,7 @@ namespace TakeABreak
     internal class ModEntry : Mod
     {
         private static ModConfig config;
+        private static bool DayJustChanged = false;
         public override void Entry(IModHelper helper)
         {
             helper.Events.GameLoop.OneSecondUpdateTicked += GameLoop_OneSecondUpdateTicked;
@@ -21,8 +22,7 @@ namespace TakeABreak
 
         private void GameLoop_DayStarted(object sender, StardewModdingAPI.Events.DayStartedEventArgs e)
         {
-            PreviousEnergy = 0;
-            PreviousHealth = 0;
+            DayJustChanged = true;
             //Other mods can change Max Heath/Energy - This prevents this mod from accidentally hurting you when you wake up.
         }
 
@@ -40,11 +40,15 @@ namespace TakeABreak
                 return;
             }
             // Check if the player has been hurt, used a tool, or moved. If any are true, update values and return.
-            if(Game1.player.health < PreviousHealth || (int)Math.Round(Game1.player.stamina, 0) < PreviousEnergy || Game1.player.position.Value != PlayerPosition)
+            if(   Game1.player.health < PreviousHealth
+               || (int)Math.Round(Game1.player.stamina, 0) < PreviousEnergy 
+               || Game1.player.position.Value != PlayerPosition 
+               || DayJustChanged)
             {
                 PreviousHealth = Game1.player.health;
                 PreviousEnergy = (int)Math.Round(Game1.player.stamina,0);
                 PlayerPosition = Game1.player.position.Value;
+                DayJustChanged = false;
                 this.Monitor.Log("Player Moved or used a tool", LogLevel.Debug);
                 return;
             }
