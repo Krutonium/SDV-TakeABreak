@@ -70,9 +70,10 @@ namespace TakeABreak
                 return;
             }
 
-            if (Game1.player.health != Game1.player.maxHealth) 
+            if (Game1.player.health != Game1.player.maxHealth)
             {
-                Game1.player.health = PreviousHealth += config.HealthPerSecond;
+                int potentialHealth = PreviousHealth += config.HealthPerSecond;
+                Game1.player.health = Math.Min(potentialHealth, Game1.player.maxHealth);
             }
 
             if((int)Math.Round(Game1.player.stamina, 0) <= (int)Math.Round((float)Game1.player.MaxStamina, 0))
