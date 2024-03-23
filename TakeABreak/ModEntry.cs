@@ -78,8 +78,9 @@ namespace TakeABreak
 
             if((int)Math.Round(Game1.player.stamina, 0) <= (int)Math.Round((float)Game1.player.MaxStamina, 0))
             {
-                Game1.player.Stamina = PreviousEnergy += config.EnergyPerSecond;
-            }
+                float potentialEnergy = PreviousEnergy += config.EnergyPerSecond;
+                Game1.player.Stamina = Math.Min(potentialEnergy, Game1.player.MaxStamina);
+            }   
             //this.Monitor.Log("Added to Energy and Health (if applicable)", LogLevel.Debug);
         }
 
